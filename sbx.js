@@ -16,7 +16,7 @@ client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
 	  client.user.setActivity(`yay new guild :) :) | #BeingRecorded | disco.gg/grumpy`);
-	      await sleep(5000);
+	
     client.user.setActivity(`Write +help! | #BeingRecoded | disco.gg/grumpy`);
 });
 
@@ -24,7 +24,7 @@ client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`I have been removed from guild: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
 	  client.user.setActivity(`I have been removed off an guild :( | #BeingRecoded | disco.gg/grumpy`);
-	      await sleep(5000);
+
     client.user.setActivity(`Write +help! | #BeingRecoded | disco.gg/grumpy`);
 });
 

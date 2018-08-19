@@ -52,11 +52,11 @@ client.on("message", async message => {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+    m.edit(`PENG BITCH! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
    if(command === "invite") {
    message.reply("You have been PMed with the info about invites and SCM")
-   message.author.send("Hey! If you wanted the :P server invite click on this link http://disco.gg/ If you wanted :PBot's invite click on this link")
+   message.author.send("Hey! If you wanted the :P server invite click on this link http://disco.gg/grumpy If you wanted PBot's invite click on this link http://firewall.co.nf/pbot/")
   }
 	if(command === "getpfp") {
     message.reply("Getting your profile picture!")
@@ -103,7 +103,7 @@ client.on("message", async message => {
 
   if(command === "help") {
 const embed = {
-  "title": "Command help with PBot",
+  "title": "Command help with pBot",
   "description": "<:thonkang:219069250692841473>",
   "url": "https://disco.gg/grumpy",
   "color": 2955339,
@@ -115,7 +115,7 @@ const embed = {
     "url": "https://a.doko.moe/nsbmrw.jpg"
   },
   "author": {
-    "name": "OwlsOwlAtNight"
+    "name": "pBot"
   },
   "fields": [
     {

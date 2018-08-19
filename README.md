@@ -1,4 +1,4 @@
-**A bot created for the smoothcreamserver (Willl be ported soon)**
+**pBot install guididie**
 <br>
 **How to install my shitty bot?**
 <br>

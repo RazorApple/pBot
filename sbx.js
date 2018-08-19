@@ -5,23 +5,27 @@ const client = new Discord.Client();
 
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
-  console.log(`Made by evie.codes/SmoothCreamDev`); 
+  console.log(`evie.codes template i used and modified k boi??`); 
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
-  client.user.setActivity(`Currentntly providing to ${client.users.size} users! | discord.io/smoothcream`);
+  client.user.setActivity(`Write +help! | #BeingRecoded | disco.gg/grumpy`);
 });
 
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  client.user.setActivity(`Currentntly providing to ${client.users.size} users! | discord.io/smoothcream`);
+	  client.user.setActivity(`yay new guild :) :) | #BeingRecorded | disco.gg/grumpy`);
+	      await sleep(5000);
+    client.user.setActivity(`Write +help! | #BeingRecoded | disco.gg/grumpy`);
 });
 
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
-  console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Currentntly providing to ${client.users.size} users! | discord.io/smoothcream`);
+  console.log(`I have been removed from guild: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+	  client.user.setActivity(`I have been removed off an guild :( | #BeingRecoded | disco.gg/grumpy`);
+	      await sleep(5000);
+    client.user.setActivity(`Write +help! | #BeingRecoded | disco.gg/grumpy`);
 });
 
 
@@ -52,7 +56,7 @@ client.on("message", async message => {
   }
    if(command === "invite") {
    message.reply("You have been PMed with the info about invites and SCM")
-   message.author.send("Hello. We cannot give you the invite for SCM (SmoothCreamBot) bcs we are not devolping it for many servers. But if you want the SmoothCream invite here it is! https://discord.io/smoothcream")
+   message.author.send("Hey! If you wanted the :P server invite click on this link http://disco.gg/ If you wanted :PBot's invite click on this link")
   }
 	if(command === "getpfp") {
     message.reply("Getting your profile picture!")
@@ -67,49 +71,13 @@ client.on("message", async message => {
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
-   if(command === "XDLOL") {
-   const user = message.mentions.users.first();
-    // If we have a user mentioned
-    if (user) {
-      // Now we get the member from the user
-      const member = message.guild.member(user);
-      // If the member is in the guild
-      if (member) {
-        /**
-         * Ban the member
-         * Make sure you run this on a member, not a user!
-         * There are big differences between a user and a member
-         * Read more about what ban options there are over at
-         * https://discord.js.org/#/docs/main/master/class/GuildMember?scrollTo=ban
-         */
-        member.ban({
-          reason: 'They were bad!',
-        }).then(() => {
-          // We let the message author know we were able to ban the person
-          message.reply(`Successfully banned ${user.tag}`);
-        }).catch(err => {
-          // An error happened
-          // This is generally due to the bot not being able to ban the member,
-          // either due to missing permissions or role hierarchy
-          message.reply('I was unable to ban the member');
-          // Log the error
-          console.error(err);
-        });
-      } else {
-        // The mentioned user isn't in this guild
-        message.reply('That user isn\'t in this guild!');
-      }
-    } else {
-    // Otherwise, if no user was mentioned
-      message.reply('You didn\'t mention the user to ban!');
-  }
-  }
   
-  if(command === "kick") {
+  
+  if(command === "remove") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-    if(!message.member.roles.some(r=>["Administrator", "Moderator","Owner"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["BanningAllowed"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
     
     // Let's first check if we have a member and if we can kick them!
@@ -128,57 +96,16 @@ client.on("message", async message => {
     
     // Now, time for a swift kick in the nuts!
     await member.kick(reason)
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
+      .catch(error => message.reply(`Sorry ${message.author} I couldn't remove because of : ${error}`));
+    message.reply(`${member.user.tag} has been removed by ${message.author.tag} because: ${reason}`);
 
   }
-    if(command === "aembed") {
-const embed = {
-  "color": 13632027,
-  "timestamp": "2018-08-03T12:51:50.421Z",
-  "footer": {
-    "icon_url": "https://a.doko.moe/nsbmrw.jpg",
-    "text": "OwlsOwlAtNight @ adrians@disroot.org"
-  },
-  "fields": [
-    {
-      "name": "Rule 1",
-      "value": "Do not swear hard. Like saying shit a few times should not hurt."
-    },
-    {
-      "name": "Rule 2",
-      "value": "No Nsfw! You will get perm  banned,or kicked!"
-    },
-    {
-      "name": "Rule 3",
-      "value": "Please do not talk about offtopic stuff in the arts and also bot channels!"
-    },
-    {
-      "name": "Rule 4",
-      "value": "Do not ask for roles🙄🙄"
-    },
-    {
-      "name": "Rule 5",
-      "value": "Do not play earrape or music like Despacito2"
-    },
-    {
-      "name": ":angry: :anger:  :angry: (Rule 6)",
-      "value": "Do not scream into your mic."
-    },
-    {
-      "name": ":angel::skin-tone-2: :smile: (Rule 7)",
-      "value": "Be chill!"
-    }
-  ]
-};
-message.channel.send({embed});
-  }
-  
+
   if(command === "help") {
 const embed = {
-  "title": "Command help with SmoothCreamBot",
+  "title": "Command help with PBot",
   "description": "<:thonkang:219069250692841473>",
-  "url": "https://discord.io/smoothcream",
+  "url": "https://disco.gg/grumpy",
   "color": 2955339,
   "timestamp": "2018-08-02T11:59:25.292Z",
   "footer": {
@@ -188,21 +115,16 @@ const embed = {
     "url": "https://a.doko.moe/nsbmrw.jpg"
   },
   "author": {
-    "name": "SmoothCreamBot help!",
-    "url": "https://discordapp.com"
+    "name": "OwlsOwlAtNight"
   },
   "fields": [
-    {
-      "name": "+play",
-      "value": "Play Music! (Currently working on an music player!)"
-    },
     {
       "name": "+purge",
       "value": "Removes messages!"
     },
     {
-      "name": "+kick",
-      "value": "Kicks peopole off the server!"
+      "name": "+remove",
+      "value": "Removes peopole."
     },
     {
       "name": "+help",
@@ -222,7 +144,7 @@ const embed = {
     },
 	{
       "name": "+invite",
-      "value": "Get info about Invites 'This will PM you'"
+      "value": "Get invites!"
     }
   ]
 };

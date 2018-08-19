@@ -1,0 +1,22 @@
+{
+  "name": "1337",
+  "version": "1.33.7",
+  "description": "1337l33tb0i",
+  "main": "oijhpowsfd.WOAH",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "now-start": "node sbx.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/WOOPwoiejdadfsdfj0sfd/wihwsfdiposkfp0isduj/r/place"
+  },
+  "keywords": [
+    "1337l33t"
+  ],
+  "author": "somebody in the desert",
+  "license": "MIT"
+}

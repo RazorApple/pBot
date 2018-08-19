@@ -73,7 +73,7 @@ client.on("message", async message => {
   }
   
   
-  if(command === "remove") {
+if(command === "remove") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
@@ -98,11 +98,7 @@ client.on("message", async message => {
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't remove because of : ${error}`));
     message.reply(`${member.user.tag} has been removed by ${message.author.tag} because: ${reason}`);
-	  // Create the attachment using Attachment
-       // Create the attachment using Attachment
-        const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
-        // Send the attachment in the message channel with a content
-        message.channel.send(`${member.user.tag},`, attachment);
+
   }
 
   if(command === "help") {

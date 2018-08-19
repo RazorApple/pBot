@@ -1,0 +1,2 @@
+# smooth-cream-bot
+SCBot

@@ -18,4 +18,6 @@ it also likes a command called `now` you need to get the now-cli download it the
 <br>
 also write `node now-start` to start my crap bot okoioI?
 <br>
+This bot was created orginally for the smoothcream server. I have modified for the :p server. (it was created by me)
+<br>
 **pls put issues inside the issue tab and if u want to make it better pls pull request ok?**

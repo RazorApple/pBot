@@ -55,7 +55,7 @@ client.on("message", async message => {
     m.edit(`PENG BITCH! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
    if(command === "invite") {
-   message.reply("You have been PMed with the info about invites and SCM")
+   message.reply("i've pmed the invite of this bot k?")
    message.author.send("Hey! If you wanted the :P server invite click on this link http://disco.gg/grumpy If you wanted PBot's invite click on this link http://firewall.co.nf/pbot/")
   }
 	if(command === "getpfp") {
@@ -111,9 +111,6 @@ const embed = {
   "footer": {
     "text": "Copyrighted by OwlsOwlAtNight"
   },
-  "thumbnail": {
-    "url": "https://a.doko.moe/nsbmrw.jpg"
-  },
   "author": {
     "name": "pBot"
   },
@@ -158,8 +155,8 @@ message.channel.send({embed});
     const deleteCount = parseInt(args[0], 10);
     
     // Ooooh nice, combined conditions. <3
-    if(!deleteCount || deleteCount < 1 || deleteCount > 250)
-      return message.reply("Please provide a number between 1 and 250 for the number of messages to delete");
+    if(!deleteCount || deleteCount < 1 || deleteCount > 100)
+      return message.reply("Please provide a number between 1 and 100 for the number of messages to delete");
     
     // So we get our messages, and delete them. Simple enough, right?
     const fetched = await message.channel.fetchMessages({limit: deleteCount});

@@ -1,7 +1,9 @@
+
 // CONSTS!
 const Discord = require("discord.js");
 const config = require("./config.json");
 const client = new Discord.Client();
+const attachment = new Discord.Attachment('https://i.imgur.com/w3duR07.png');
 
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
@@ -98,9 +100,20 @@ if(command === "remove") {
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't remove because of : ${error}`));
     message.reply(`${member.user.tag} has been removed by ${message.author.tag} because: ${reason}`);
-
+    message.channel.send(attachment);
   }
-
+  if(command === "serverinfo") {
+    let pic = message.guild.iconURL;
+    let serverembed = new Discord.RichEmbed()
+    .setDescription("Server Information")
+    .setColor("#15f153")
+    .setThumbnail(pic)
+    .addField("Server Name", message.guild.name)
+    .addField("Created On", message.guild.createdAt)
+    .addField("You Joined", message.member.joinedAt)
+    .addField("Total Members", message.guild.memberCount);
+  message.channel.send(serverembed);
+  }
   if(command === "help") {
 const embed = {
   "title": "Command help with pBot",
@@ -126,6 +139,10 @@ const embed = {
     {
       "name": "+help",
       "value": "You are looking at help :thinking::thinking::thinking:"
+    },
+    {
+      "name": "+serverinfo",
+      "value": "Check this servers info."
     },
     {
       "name": "+say",

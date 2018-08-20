@@ -97,7 +97,7 @@ if(command === "remove") {
     if(!reason) reason = "No reason provided";
     
     // Now, time for a swift kick in the nuts!
-    await member.kick(reason)
+    await member.ban(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't remove because of : ${error}`));
     message.reply(`${member.user.tag} has been removed by ${message.author.tag} because: ${reason}`);
     message.channel.send(attachment);
@@ -114,6 +114,13 @@ if(command === "remove") {
     .addField("Total Members", message.guild.memberCount);
   message.channel.send(serverembed);
   }
+  if(command === "banallow") {
+  if(message.member.roles.some(r=>["banallow"].includes(r.name)) ) {
+  message.reply("You can remove ppl lower than pBot's rank.")
+   } else {
+  message.reply("You cannot remove ppl lower than pBot's rank.")
+  }
+  }	
   if(command === "help") {
 const embed = {
   "title": "Command help with pBot",
@@ -131,6 +138,10 @@ const embed = {
     {
       "name": "+purge",
       "value": "Removes messages!"
+    },
+    {
+      "name": "+banallow",
+      "value": "Check if you can ban ppl"
     },
     {
       "name": "+remove",

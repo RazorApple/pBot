@@ -1,3 +1,4 @@
+# Please do not take any of this seriously.
 **pBot install guididie**
 <br>
 **How to install my shitty bot?**
